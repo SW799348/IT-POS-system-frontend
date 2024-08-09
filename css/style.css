@@ -1,0 +1,239 @@
+/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
+
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  Remove list styles (bullets/numbers)
+  in case you use it with normalize.css
+*/
+ol,
+ul {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* Removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+/**/
+/* ======================================================customer css====================================================================== */
+* {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  background-color: #f4f4f4;
+  /* background-color: gray; */
+}
+header {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  color: #617692;
+  z-index: 1;
+
+}
+#navbar {
+  border-radius: 30px;
+  background-color: #bdbdcf;
+  /* position: sticky;
+  top: 0; */
+}
+#navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px;
+  margin-bottom: 0;
+}
+#navbar ul li {
+  padding: 10px;
+  border-radius: 30px;
+}
+#navbar ul li:hover {
+  background-color: #3772f0;
+  color: white;
+}
+#navbar ul li a {
+  text-decoration: none;
+  font-weight: 300;
+}
+
+#navbar ul li span {
+  padding: 5px;
+}
+
+
+/* ======================================media queries============================================= */
+
+@media screen and (max-width: 1165px) {
+  .threeForms {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px;
+    place-items: center;
+    align-items: center;
+    justify-items: center;
+  }
+}
+
+@media screen and (max-width: 1019px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 780px) {
+  #menuIcon {
+    display: block;
+    text-align: end;
+  }
+  .tittleBar h1 {
+    font-size: 20px;
+  }
+  .getAndClearButtons {
+    display: none;
+  }
+  .responsiveNav {
+    padding: 15px;
+    background-color: #5e5f5e;
+    width: 100%;
+  }
+  .responsiveNav ul li a {
+    display: none;
+  }
+  .threeForms {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  header {
+    padding: 0;
+  }
+  #navbar {
+    display: none;
+  }
+  .form {
+    width: 100%;
+  }
+  #orderTittle {
+    font-size: 20px;
+    
+  }
+  .itemCardsContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .tittleBar {
+    display: flex;
+  }
+  .tittleBar h1 {
+    font-size: 20px;
+    /* font-weight: bold; */
+  }
+  .search {
+    width: 200px;
+  }
+  .searchIcon {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+}
+
+/* Add a media query for larger screens to show the menu items */
+@media (min-width: 768px) {
+  .responsiveNav ul li {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .tittleBar h1 {
+    font-size: 14px;
+    /* font-weight: bold; */
+  }
+  .itemCardsContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+  }
+  #custTable {
+    height: auto;
+    overflow: scroll;
+    font-size: 12px;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .search {
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    padding: 8px;
+    width: 150px;
+  }
+  .search i {
+    display: none;
+  }
+  .registration form {
+    margin: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.441);
+    border-radius: 20px;
+    background-color: #fefeff;
+    padding: 35px;
+  }
+
+}

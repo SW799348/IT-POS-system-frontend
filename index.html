@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POS system</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Galada&family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/customer.css">
+    <link rel="stylesheet" href="/css/item.css">
+    <link rel="stylesheet" href="/css/order.css">
+    
+  </head>
+  <body>
+    <div id="page1">
+      <header>
+        <nav id="navbar">
+          <ul>
+            <li>
+              <a href="#"><i class="fa-solid fa-house"></i><span>Home</span></a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-users"></i><span>Customers</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-boxes-stacked"></i><span>Items</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-cart-arrow-down"></i><span>Order</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div>
+        <nav class="responsiveNav">
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Customer</a>
+            </li>
+            <li>
+              <a href="#">Item</a>
+            </li>
+            <li>
+              <a href="#">Place Order</a>
+            </li>
+            <li id="menuIcon">
+              <i class="fa-solid fa-bars"></i>
+            </li>
+            <li id="closeIcon">
+              <i class="fa-solid fa-xmark"></i>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div id="customerPage">
+      <div class="tittleBar">
+        <h1>Customer Manage</h1>
+
+        <div class="getAndClearButtons">
+          <button type="button" id="btnGetAll" class="btnGetAll">
+            Get All
+          </button>
+          <!-- <button type="button" id="btnClearAll" class="btnClearAll">
+            Clear All
+          </button> -->
+        </div>
+        <div class="searchIcon">
+          <div class="search">
+            <input placeholder="Search..." type="text" id="searchId" />
+            <button type="button" id="btnSearch">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrapper">
+        <div id="custTable">
+          <table id="customerTable">
+            <tr>
+              <th>Customer Id</th>
+              <th>Customer Name</th>
+              <th>Customer Address</th>
+              <th>Customer Salary</th>
+            </tr>
+
+            <!-- <tr>
+              <td>1</td>
+              <td>Sami</td>
+              <td>Galle</td>
+              <td>30000</td>
+            </tr> -->
+          </table>
+        </div>
+        <!-- <div class="vertical"></div> -->
+        <div class="registration">
+          <form action="" id="customerRegistration">
+            <p class="title">Customer Registration</p>
+            <div class="inputs">
+              <label for="id">Customer Id</label>
+              <input type="text" id="custId" />
+              <span class="error" id="custIdError"></span>
+            </div>
+            <div class="inputs">
+              <label for="name">Customer Name</label>
+              <input type="text" id="custName" />
+              <span class="error" id="custNameError"></span>
+            </div>
+            <div class="inputs">
+              <label for="address">Customer Address</label>
+              <input type="text" id="custAddress" />
+              <span class="error" id="custAddressError"></span>
+            </div>
+            <div class="inputs">
+              <label for="salary">Customer Salary</label>
+              <input type="text" id="custSalary" />
+              <span class="error" id="custSalaryError"></span>
+            </div>
+            <div class="buttons">
+              <button class="save" type="button" id="btnSave">
+                <i class="fa-regular fa-floppy-disk"></i>
+              </button>
+              <button class="update" type="button" id="btnUpdate">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </button>
+              <button class="delete" type="button" id="btnRemove">
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--============================================= item Page =================================================================-->
+
+    <div class="itemPage">
+      <div class="tittleBar">
+        <h1>Item Manage</h1>
+
+        <div class="getAndClearButtons">
+          <button type="button" id="btnGetAll" class="btnGetAll">
+            Get All
+          </button>
+          <button type="button" id="btnClearAll" class="btnClearAll">
+            Clear All
+          </button>
+        </div>
+        <div class="searchIcon">
+          <div class="search">
+            <input placeholder="Search..." type="text" id="searchInput" />
+            <button type="button" id="btnSearchItem">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrapper">
+        <div id="itemCardsContainer" class="itemCardsContainer"></div>
+
+        <div class="registration">
+          <form action="" id="itemRegistration">
+            <p class="title">Item Form</p>
+            <div class="inputs">
+              <label for="itemcode">Item Code</label>
+              <input type="text" id="itemCode" />
+              <span class="error" id="itemCodeError"></span>
+   
+            </div>
+            <div class="inputs">
+              <label for="itemname">Item Name</label>
+              <input type="text" id="itemName" />
+              <span class="error" id="itemNameError"></span>
+            </div>
+            <div class="inputs">
+              <label for="qty">Item Qty</label>
+              <input type="text" id="itemQty" />
+              <span class="error" id="itemQtyError"></span>
+            </div>
+            <div class="inputs">
+              <label for="unitprice">Unit Price</label>
+              <input type="text" id="unitPrice" />
+              <span class="error" id="unitPriceError"></span>
+            </div>
+            <div class="inputs">
+              <label for="addImage">Add Image</label>
+              <label for="fileInput" class="file-label">+</label>
+              <input type="file" id="fileInput" class="file-input" />
+              <span id="file-chosen">No file chosen</span>
+              <div id="imagePreview" style="margin-top: 10px">
+                <img
+                  id="imagePreviewImg"
+                  src=""
+                  alt=""
+                  style="max-width: 100%; height: auto; display: none"
+                />
+              </div>
+            </div>
+
+            <div class="buttons">
+              <button class="save" type="button" id="btnSaveItem">
+                <i class="fa-regular fa-floppy-disk"></i>
+              </button>
+              <button class="update" type="button" id="btnUpdateItem">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </button>
+              <button class="delete" type="button" id="btnRemoveItem">
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- ==========================place order form==================================================================== -->
+
+    <div class="placeOrderForm">
+      <h1 id="orderTittle">Place Order Form</h1>
+
+      <div class="threeForms">
+        <div class="invoiceForm">
+          <form class="form formInvoice">
+            <p class="title">Invoice Details</p>
+            <div class="flex">
+              <label>
+                <input
+                  required=""
+                  placeholder=""
+                  type="text"
+                  class="input"
+                  id="orderIdField"
+                />
+                <span>Order Id</span>
+              </label>
+
+              <label>
+                <input
+                  required=""
+                  placeholder=""
+                  type="text"
+                  class="input"
+                  style="color: rgba(88, 87, 87, 0.822)"
+                  id="currentDate"
+                />
+                <span>Date</span>
+              </label>
+            </div>
+
+            <label>
+              <select
+                name=""
+                id="customerIdDropDown"
+                style="color: rgba(88, 87, 87, 0.822)"
+              ></select>
+              <span></span>
+            </label>
+
+            <label>
+              <input
+                required=""
+                placeholder="Customer Id"
+                type="text"
+                class="input"
+                id="customerIdField"
+              />
+              <span></span>
+            </label>
+
+            <label>
+              <input
+                required=""
+                placeholder="Name"
+                type="text"
+                class="input"
+                id="customerNameField"
+              />
+              <span></span>
+            </label>
+            <label>
+              <input
+                required=""
+                placeholder="Salary"
+                type="text"
+                class="input"
+                id="salaryField"
+              />
+              <span></span>
+            </label>
+            <label>
+              <input
+                required=""
+                placeholder="Address"
+                type="text"
+                class="input"
+                id="addressField"
+              />
+              <span></span>
+            </label>
+          </form>
+        </div>
+
+        <div class="itemForm">
+          <form class="form formItem">
+            <p class="title">Item Details</p>
+
+            <label>
+              <select
+                name=""
+                id="itemIdDropDown"
+                style="color: rgba(88, 87, 87, 0.822)"
+              ></select>
+              <span></span>
+            </label>
+
+            <label id="lblItemCode">
+              <input
+                required=""
+                placeholder="Item Code"
+                type="text"
+                class="input"
+                id="itemCodeField"
+              />
+              <span></span>
+            </label>
+
+            <div class="flex">
+              <label id="lblItemName">
+                <input
+                  required=""
+                  placeholder="Item Name"
+                  type="text"
+                  class="input"
+                  id="itemNameField"
+                />
+                <span></span>
+              </label>
+
+              <label id="lblItemPrice">
+                <input
+                  required=""
+                  placeholder="Price"
+                  type="text"
+                  class="input"
+                  id="priceField"
+                />
+                <span></span>
+              </label>
+            </div>
+
+            <label>
+              <input
+                required=""
+                placeholder="Qty On Hand"
+                type="text"
+                class="input"
+                id="QtyOnHandField"
+              />
+              <span></span>
+               
+            </label>
+            <label id="lblQuantity">
+              <input
+                required=""
+                placeholder=""
+                type="text"
+                class="input"
+                id="orderQtyField"
+              />
+              <span>Order Qty</span>
+              <span class="error" id="qtyError"></span>
+            </label>
+            <button class="submit" id="addToCart">Add to Cart</button>
+          </form>
+        </div>
+        <div class="showAmountForm">
+          <div class="AmountForm">
+            <form class="form amountForm">
+              <p class="title">Order Details</p>
+
+                <h1 id="subTotal" style="font-size: 15px; color: #d14545; ">Sub Total :</h1>
+                <label>
+                  <input
+                    required=""
+                    placeholder=""
+                    type="text"
+                    class="input"
+                    id="discountField"
+                  />
+                  <span>Discount</span>
+                </label>
+    
+               <h1 style="font-size: 15px; color: #5fb77c;">Total : <span id="total"></span> </h1>
+               <div class="flex">     <label>
+                  <input
+                    required=""
+                    placeholder=""
+                    type="text"
+                    class="input"
+                    id="cashField"
+                  />
+                  <span>Cash</span>
+                </label>
+              <label>
+                <input
+                  required=""
+                  placeholder=""
+                  type="text"
+                  class="input"
+                  id="balanceField"
+                />
+                <span>Balance</span>
+              </label></div>
+          
+              <button class="submit" id="purchase">Purchase</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="orderWrapper">
+         <div id="OrderTable">
+         <table id="tblOrder">
+          <tr>
+            <th>Item Code</th>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th >Action</th>
+          </tr>
+        </table>
+        <!-- <button id="removeItemBtn">Remove</button> -->
+      </div>
+       
+          </form>
+        </div>
+      </div>
+
+    <script type="module" src="controller/app.js"></script>
+    <script type="module" src="controller/customerController.js"></script>
+    <script type="module" src="controller/itemController.js"></script>
+    <script type="module" src="controller/orderController.js"></script>
+
+    
+  </body>
+</html>

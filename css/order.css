@@ -1,0 +1,297 @@
+/* ======================================================order css====================================================================== */
+.threeForms {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 20px;
+    place-items: center;
+    border-bottom: 1px solid #8b8c8b;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    border: 1px solid rgba(128, 128, 128, 0.441);
+    
+  }
+  
+  .title {
+    font-size: 28px;
+    color: royalblue;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }
+  
+  .title::before,
+  .title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: royalblue;
+  }
+  
+  .title::before {
+    width: 18px;
+    height: 18px;
+    background-color: royalblue;
+  }
+  
+  .title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+  
+  .message,
+  .signin {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+  }
+  
+  .flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+  }
+  
+  .form label {
+    position: relative;
+  }
+  .form {
+    margin: 10px;
+  }
+  
+  .form label .input,
+  select {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+  
+  .form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,
+  .form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .form label .input:valid + span {
+    color: green;
+  }
+  .submit {
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .submit:hover {
+    background-color: rgb(56, 90, 194);
+  }
+  
+  #orderTittle {
+    font-size: 2rem;
+    margin: 20px;
+  }
+  
+  .orderWrapper{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 30px;
+  }
+  #tblOrder td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  #tblOrder tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+ 
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+  @media screen and (max-width: 1165px) {
+    .threeForms {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 20px;
+      place-items: center;
+      align-items: center;
+      justify-items: center;
+    }
+  }
+  
+  @media screen and (max-width: 1019px) {
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+  @media screen and (max-width: 780px) {
+    #menuIcon {
+      display: block;
+      text-align: end;
+    }
+    .tittleBar h1 {
+      font-size: 20px;
+    }
+    .getAndClearButtons {
+      display: none;
+    }
+    .responsiveNav {
+      padding: 15px;
+      background-color: #5e5f5e;
+      width: 100%;
+    }
+    .responsiveNav ul li a {
+      display: none;
+    }
+    .threeForms {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    header {
+      padding: 0;
+    }
+    #navbar {
+      display: none;
+    }
+    .form {
+      width: 100%;
+    }
+    #orderTittle {
+      font-size: 20px;
+      
+    }
+    .itemCardsContainer{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  
+  @media screen and (max-width: 580px) {
+    .tittleBar {
+      display: flex;
+    }
+    .tittleBar h1 {
+      font-size: 20px;
+      /* font-weight: bold; */
+    }
+    .search {
+      width: 200px;
+    }
+    .searchIcon {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+  }
+  
+  /* Add a media query for larger screens to show the menu items */
+  @media (min-width: 768px) {
+    .responsiveNav ul li {
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 325px) {
+    .tittleBar h1 {
+      font-size: 14px;
+      /* font-weight: bold; */
+    }
+    .itemCardsContainer {
+      display: grid;
+      grid-template-columns: 1fr;
+      place-items: center;
+    }
+    #custTable {
+      height: auto;
+      overflow: scroll;
+      font-size: 12px;
+    }
+  
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 90%;
+      margin: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .search {
+      background-color: white;
+      border-radius: 30px;
+      display: flex;
+      padding: 8px;
+      width: 150px;
+    }
+    .search i {
+      display: none;
+    }
+    .registration form {
+      margin: 20px;
+      border: 1px solid rgba(128, 128, 128, 0.441);
+      border-radius: 20px;
+      background-color: #fefeff;
+      padding: 35px;
+    }
+  
+  }
+  

@@ -1,0 +1,272 @@
+#customerPage {
+    margin-top: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #8b8c8b;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .tittleBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .tittleBar h1 {
+    font-size: 2rem;
+  }
+  .btnGetAll,
+  .btnClearAll {
+    background-color: #3772f0;
+    padding: 10px 15px;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+  }
+  .btnClearAll:hover {
+    background-color: #2f6ec1;
+  }
+  .btnGetAll:hover {
+    background-color: #2f6ec1;
+  }
+  .getAndClearButtons {
+    padding-left: 100px;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+   
+  
+  }
+  
+  .registration {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  #custTable {
+    height: 500px;
+    overflow-x: hidden;
+  }
+  
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 30px;
+  }
+  .error {
+    color: red;
+    font-family: arial, sans-serif;
+  }
+  #customerTable td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .search {
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  .search button i {
+    color: black;
+  }
+  
+  .registration form {
+    /* margin: 20px; */
+    border: 1px solid rgba(128, 128, 128, 0.441);
+    border-radius: 20px;
+    background-color: #fefeff;
+    padding: 40px;
+  }
+  .registration form h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #5e5f5e;
+  }
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .inputs label {
+    color: #666666;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  .inputs input {
+    color: black;
+    height: 40px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.441);
+  }
+  .buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .buttons button {
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    color: black;
+    font-size: 25px;
+    padding: 10px 20px;
+  }
+  
+  .save:hover {
+    border: 1px solid #00b762;
+    color: #00b762;
+  }
+  .update:hover {
+    border: 1px solid #3772f0;
+    color: #3772f0;
+  }
+  .delete:hover {
+    border: 1px solid red;
+    color: red;
+  }
+
+  @media screen and (max-width: 1165px) {
+    .threeForms {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 20px;
+      place-items: center;
+      align-items: center;
+      justify-items: center;
+    }
+  }
+  
+  @media screen and (max-width: 1019px) {
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+  @media screen and (max-width: 780px) {
+    #menuIcon {
+      display: block;
+      text-align: end;
+    }
+    .tittleBar h1 {
+      font-size: 20px;
+    }
+    .getAndClearButtons {
+      display: none;
+    }
+    .responsiveNav {
+      padding: 15px;
+      background-color: #5e5f5e;
+      width: 100%;
+    }
+    .responsiveNav ul li a {
+      display: none;
+    }
+    .threeForms {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    header {
+      padding: 0;
+    }
+    #navbar {
+      display: none;
+    }
+    .form {
+      width: 100%;
+    }
+    #orderTittle {
+      font-size: 20px;
+      
+    }
+    .itemCardsContainer{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  
+  @media screen and (max-width: 580px) {
+    .tittleBar {
+      display: flex;
+    }
+    .tittleBar h1 {
+      font-size: 20px;
+      /* font-weight: bold; */
+    }
+    .search {
+      width: 200px;
+    }
+    .searchIcon {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+  }
+  
+  /* Add a media query for larger screens to show the menu items */
+  @media (min-width: 768px) {
+    .responsiveNav ul li {
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 325px) {
+    .tittleBar h1 {
+      font-size: 14px;
+      /* font-weight: bold; */
+    }
+    .itemCardsContainer {
+      display: grid;
+      grid-template-columns: 1fr;
+      place-items: center;
+    }
+    #custTable {
+      height: auto;
+      overflow: scroll;
+      font-size: 12px;
+    }
+  
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 90%;
+      margin: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .search {
+      background-color: white;
+      border-radius: 30px;
+      display: flex;
+      padding: 8px;
+      width: 150px;
+    }
+    .search i {
+      display: none;
+    }
+    .registration form {
+      margin: 20px;
+      border: 1px solid rgba(128, 128, 128, 0.441);
+      border-radius: 20px;
+      background-color: #fefeff;
+      padding: 35px;
+    }
+  
+  }
+  
